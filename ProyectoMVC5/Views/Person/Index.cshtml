@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProyectoMVC5.Models.Person>
+
+@{
+    ViewBag.Title = "Person";
+    var user = new ProyectoMVC5.Models.Person
+    {
+        Id = 100,
+        Name = "Pedro",
+        LastName = "Castillo"
+    };
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Longitud Nombre + Apellido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Name</td>
+                <td>@person.LastName</td>
+                <td>@(person.Name.Length + person.LastName.Length)</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<hr />
+<div>
+    Responsable: <br />
+    @user.Name @user.LastName
+</div>

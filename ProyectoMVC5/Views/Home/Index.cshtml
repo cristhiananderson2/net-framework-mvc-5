@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    var L_PERSONS = ViewBag.L_PERSONS;
+    var L_PERSON_2 = TempData["L_PERSON_2"];
+}
+
+<h1>Hello Word</h1>
+<hr />
+<h4>Datos con ViewBag</h4>
+<code>
+    @Html.Raw(Json.Encode(L_PERSONS))
+</code>
+
+<h4>Datos con TempData</h4>
+<code>
+    @Html.Raw(Json.Encode(L_PERSON_2))
+</code>
